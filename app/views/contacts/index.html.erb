@@ -1,0 +1,4 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contacts</h1>
+<%= react_component('Contacts', { path: contacts_path, authToken: form_authenticity_token, initialContacts: @contacts }) %>
