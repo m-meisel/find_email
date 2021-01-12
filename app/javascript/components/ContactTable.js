@@ -1,5 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const TableHead = styled.thead`
+  background-color: #8FBABF;
+  color: white;
+`;
+
+const Table = styled.table`
+  width: 100%;
+`;
+
+const StyledTh = styled.th`
+  padding: 6px;
+`;
 
 export const ContactTable = ({ contacts }) => {
   const rows = contacts.map((contact) => {
@@ -14,17 +28,17 @@ export const ContactTable = ({ contacts }) => {
   });
 
   return (
-    <table>
-      <thead>
+    <Table>
+      <TableHead>
         <tr>
-          <th>First name</th>
-          <th>Last name</th>
-          <th>Url</th>
-          <th>Email</th>
+          <StyledTh>First name</StyledTh>
+          <StyledTh>Last name</StyledTh>
+          <StyledTh>Url</StyledTh>
+          <StyledTh>Email</StyledTh>
         </tr>
-      </thead>
+      </TableHead>
       <tbody>{rows}</tbody>
-    </table>
+    </Table>
   );
 };
 

@@ -13,6 +13,8 @@ module Contacts
         result = api_client.check_email(email)
         return create_contact(email) if email_valid?(result)
       end
+
+      add_error(:base, :no_result, 'No email found for contact')
     end
 
     def create_contact(email)

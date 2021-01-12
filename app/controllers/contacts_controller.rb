@@ -20,7 +20,12 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contacts::FindEmail.run!(contact_params) # TODO handle error and return helpful message
+    outcome = Contacts::FindEmail.run(contact_params)
+    if outcome.success?
+      @contact = outcome.result
+    else
+      render json: { error: 'No email found for contact' }, status: :unprocessable_entity
+    end
   end
 
   private

@@ -11,8 +11,10 @@ export const Contacts = ({ path, authToken, initialContacts }) => {
   const onSubmit = (data) => {
     setBusy(true);
     findContact({ ...data, authToken, path }).then((result) => {
-      console.log(result);
       setContacts([...contacts, result])
+      setBusy(false);
+    }).catch(error => {
+      console.log(error);
       setBusy(false);
     });
   };
