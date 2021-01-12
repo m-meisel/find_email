@@ -1,24 +1,19 @@
 # README
+## Email finder project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Stack
+* Ruby on Rails 6.1
+  * Mutations gem is used to keep controllers small and business logic contained in testable commands
+* React
 
-Things you may want to cover:
+## Run
+* Add the Apilayer API-Key with the key: `apilayer`
+* Start the rails server using `rails s`
 
-* Ruby version
+## Missing due to time constraints
+* RSpec tests
+* React / Javascript tests
+* Proper styling of the frontend
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Additional notes
+* When we do the API call to check for existing emails we do not check the catch_all flag as it's not supported using the free subscription
